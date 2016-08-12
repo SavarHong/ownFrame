@@ -1,0 +1,179 @@
+@charset "utf-8";
+
+//button传入宽高颜色和字体大小
+//有背景色的button
+@mixin bg-btn($width, $height, $color, $fontsize) {
+    display: block;
+    height: $height;
+    width: $width;
+    font-size: $fontsize;
+    background-color: $color;
+    border-radius: rem-calc(6);
+    text-align: center;
+    line-height: $height;
+    color: #ffffff;
+    &:active {
+        color:$color;
+        background-color: #ffffff;
+        border: 1px solid $color;
+    }
+}
+
+@mixin bg-btn-color($color){
+    background-color: $color;
+    &:active{
+        color: $color;
+        background-color: #fff;
+        border-color: $color;
+    }
+}
+
+//只有边框的button
+@mixin border-btn($width, $height, $color, $fontsize) {
+    display: block;
+    height: $height;
+    width: $width;
+    font-size: $fontsize;
+    border: 1px solid $color;
+    border-radius: rem-calc(6);
+    text-align: center;
+    line-height: $height;
+    color: $color;
+    &:active,
+    &:focus {
+        color: #fff;
+        background-color: $color;
+        border: 1px solid $color;
+    }
+}
+
+@mixin border-btn-color($color){
+    border-color: $color;
+    color: $color;
+    &:active,
+    &:focus{
+        color: #fff;
+        background-color: $color;
+        border: 1px solid $color;
+    }
+}
+
+.button-type{
+    padding: rem-calc(20);
+}
+
+.btn{
+    @include bg-btn(100%, rem-calc(48), #1e95e5, rem-calc(14));
+    margin-bottom: rem-calc(10);
+    &.btn-success{
+        @include bg-btn-color(#1ab394);
+    }
+    &.btn-warn{
+        @include bg-btn-color(#f8ac59);
+    }
+    &.btn-danger{
+        @include bg-btn-color(#d9534f);
+    }
+    &.btn-default{
+        @include bg-btn-color(#bababa);
+    }
+}
+
+.btn-rounded{
+    border-radius: rem-calc(50);
+}
+
+.btn-outline{
+    @include border-btn(100%, rem-calc(48), #1e95e5, rem-calc(14));
+    margin-bottom: rem-calc(10);
+    &.btn-success{
+        @include border-btn-color(#1ab394);
+    }
+    &.btn-warn{
+        @include border-btn-color(#f8ac59);
+    }
+    &.btn-danger{
+        @include border-btn-color(#d9534f);
+    }
+    &.btn-default{
+        @include border-btn-color(#bababa);
+    }
+}
+
+.btn-group{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    .btn-outline{
+        -webkit-box-flex: 1;
+        margin-left: -1px;
+        border-radius: 0;
+        &:first-child{
+            border-radius: rem-calc(6 0 0 6);
+        }
+        &:last-child{
+            border-radius: rem-calc(0 6 6 0);
+        }
+    }
+    .btn-rounded{
+        &:first-child{
+            border-radius: rem-calc(50 0 0 50);
+        }
+        &:last-child{
+            border-radius: rem-calc(0 50 50 0);
+        }
+    }
+}
+
+.btn-dim{
+    text-shadow: 0 rem-calc(2) 0 #025b96;
+    border-bottom: rem-calc(8) solid #0a79c3;
+    border-radius: rem-calc(2);
+    height: rem-calc(56);
+    &:active {
+        color:#fff;
+        background-color: #44b0f9;
+        border: 0;
+        border-bottom: rem-calc(8) solid #0a79c3;
+    }
+    &.btn-success{
+        text-shadow: 0 rem-calc(2) 0 #036c57;
+        border-bottom-color: #05876d;
+        &:active {
+            color:#fff;
+            background-color: #14d4ad;
+            border: 0;
+            border-bottom: rem-calc(8) solid #05876d;
+        }
+    }
+    &.btn-warn{
+        text-shadow: 0 rem-calc(2) 0 #9e601d;
+        border-bottom-color: #b97327;
+        &:active {
+            color:#fff;
+            background-color: #ecb982;
+            border: 0;
+            border-bottom: rem-calc(8) solid #b97327;
+        }
+    }
+    &.btn-danger{
+        text-shadow: 0 rem-calc(2) 0 #80201d;
+        border-bottom-color: #a42d2a;
+        &:active {
+            color:#fff;
+            background-color: #f07773;
+            border: 0;
+            border-bottom: rem-calc(8) solid #a42d2a;
+        }
+    }
+    &.btn-default{
+        text-shadow: 0 rem-calc(2) 0 #5D5555;
+        border-bottom-color: #837979;
+        &:active {
+            color:#fff;
+            background-color: #d5d5d5;
+            border: 0;
+            border-bottom: rem-calc(8) solid #837979;
+        }
+    }
+}

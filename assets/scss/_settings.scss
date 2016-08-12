@@ -1,0 +1,49 @@
+@charset "utf-8";
+
+//
+// 配置文件
+//
+
+// 配置文件为最终输出的结果，在组件里面可用!default 来设置默认值，本配置文件最好不要使用!default
+
+// 这是HTML和Body的默认字体大小，基本的REM值
+// $rem-base: 16px;
+
+// 在配置文件允许使用 rem-calc()
+@import "global";
+
+// 全局设定
+$base-font-size: 100% !default;
+$body-bg: #f5f5f5 !default;
+$body-font-color: #666 !default;
+$body-font-family: STHeiTi,"Microsoft YaHei",Helvetica,"Helvetica Neue", sans-serif !default;
+$body-font-weight: normal !default;
+$body-font-style: normal !default;
+
+// 字体
+$class-font-account:20;
+$class-font:2;
+
+// 光标
+$cursor-crosshair-value: crosshair !default;
+$cursor-default-value: default !default;
+$cursor-pointer-value: pointer !default;
+$cursor-help-value: help !default;
+$cursor-text-value: text !default;
+
+// 方位
+$class-dire:top bottom left right;
+$class-top:top!default;
+$class-bottom:bottom!default;
+$class-left:left!default;
+$class-right:right!default;
+$class-browser-nav:-webkit- -moz- -ms- -o- '';
+$class-margin:"margin";
+$class-padding:"padding";
+$class-spacing-list:margin padding;
+$class-specing-accout:10;
+$class-spacing:5;
+
+//
+$include-html-classes: true !default;
+$include-html-global-classes: $include-html-classes !default;
